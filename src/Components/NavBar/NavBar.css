@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+@keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+      visibility: hidden; /* Ensure it starts hidden */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible; /* Make it visible at the end of the animation */
+    }
+  }
+  
+  
+
+nav{
+    width:100%;
+    color: #fff;
+    padding: 1px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    transition: 0.5s;
+    font-family: "Orbitron", sans-serif;
+    /* background: linear-gradient(to right, rgb(255, 102, 102), rgb(153, 0, 0)); */
+}
+.tlogo{
+    width: 150px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 5px 20px;
+    font-size: 20px;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+
+/* Create the animated underline starting from the center for all links except 'Contact Us' */
+nav ul li a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Start with the underline hidden */
+    height: 2px; /* Thickness of the underline */
+    bottom: 0;
+    left: 50%;
+    background-color: #ee01018f; /* Color of the underline */
+    transform: translateX(-50%);
+    transition: width 0.3s ease-out; /* Animate the width on hover */
+}
+
+/* Animate the underline on hover for all links except 'Contact Us' */
+nav ul li a:not(.btn):hover::after {
+    width: 100%; /* Expand the underline outward from the center */
+}
+
+/* 'Contact Us' button styling */
+nav ul li a.btn {
+    background-color: #ffffff; /* Example background color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a.btn:hover {
+    background-color: #9e9e9e; /* Example hover background color */
+}
+
+.dark-nav{
+    background: rgba(255, 144, 144, 0.859);
+    transition: 0.5s;
+}
+.menuicon{
+    display: none;
+}
+
+.service {
+    position: relative;
+}
+
+.service-content {
+    position: absolute;
+    background-color: rgba(255, 144, 144, 0.859);
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 20;
+    border-radius: 5px;
+    line-height: 2;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Start fully transparent */
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+
+.service:hover .service-content {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s; /* Visibility and opacity change when hovered */
+}
+
+
+.service-content p {
+    display: block; /* Ensure that paragraphs are block level for layout */
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(-20px); /* Start from above */
+    animation: slideIn 0.3s ease forwards; /* Animation applies at staggered intervals */
+    visibility: hidden; /* Start hidden */
+}
+
+/* Staggered animation delays for each child */
+.service-content p:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.service-content p:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.service-content p:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.service-content p:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+
+.service:hover .service-content p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* media query */
+
+@media (max-width:1000px){
+    .tlogo{
+        width: 140px;
+    }
+    nav ul li{
+        margin: 10px 15px;
+    }
+}
+@media (max-width:840px){
+    nav{
+        padding: 15px 0;
+    }
+    nav ul{
+        position: fixed;
+        display: block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(58, 0, 9);
+        z-index: -1;
+        width: 200px;
+        padding-top: 70px;
+        transition: 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px 20px;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        line-height: 1.3;
+    }
+    .menuicon{
+        display: block;
+        width: 40px;
+        cursor: pointer;
+        transform: translateY(-30px);
+    }
+    .hide-mobile-menu{
+        right: -200px;
+    }
+}

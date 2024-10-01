@@ -1,0 +1,74 @@
+/* TTLWheel.css */
+
+.wheel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #f5f5f500;
+  position: relative; /* To position text overlay correctly */
+  transition: transform 3s ease-in-out; /* Smooth rotation */
+}
+
+.wheel-image {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  z-index: 1;
+}
+
+.text-overlay {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Place text on top of the wheel */
+  transform: rotate(0deg); /* Prevent text from rotating with the wheel */
+}
+
+.segment-content {
+  position: absolute;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: 50% 100%; /* Rotate text around the center */
+}
+
+/* Position each text segment according to the wheel segments */
+.segment-content:nth-child(1) {
+  top: 20px;
+  left: 135px;
+}
+
+.segment-content:nth-child(2) {
+  top: 50px;
+  right: 60px;
+}
+
+.segment-content:nth-child(3) {
+  bottom: 150px;
+  right: 10px;
+}
+
+.segment-content:nth-child(4) {
+  bottom: 20px;
+  left: 250px;
+}
+
+.segment-content:nth-child(5) {
+  bottom: 50px;
+  left: 70px;
+}
+
+.segment-content:nth-child(6) {
+  top: 160px;
+  left: 10px;
+}

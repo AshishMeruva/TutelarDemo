@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.title{
+    text-align: center;
+    color: #c02332;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 70px 0 30px;
+    font-family: "Orbitron", sans-serif;
+}
+.title h2{
+    font-size: 32px;
+    color: rgb(209, 24, 24);
+    text-transform: uppercase;
+    margin-top: 5px;
+}

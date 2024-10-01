@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.partnership{
+    margin: 80px auto;
+    text-align: center;
+    /* transform: translateX(-160px);
+    width: 95.4rem;
+    min-height: 50vh; */
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Orbitron", sans-serif;
+    position: relative;
+    
+}
+
+.partnership::before {
+    content: '';
+    background: linear-gradient(rgba(58, 0, 9, 0.5),rgba(58, 0, 0, 0.5)), url(../../assets/partner.jpg);
+    position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            z-index: -1;
+}
+
+.gallery{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5rem 0;
+}
+.gallery a img{
+    width: 63%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+.gallery a{
+    width: 93%;
+    border-radius: 10px;
+
+}
+
+/* media-query */
+
+@media (max-width: 800px){
+    .gallery{
+        flex-wrap: wrap;
+    }
+    .gallery img{
+        width: 48%;
+        margin-bottom: 25px;
+    }
+}

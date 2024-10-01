@@ -1,0 +1,39 @@
+/* Customers.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.carousel-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  width: calc(100% * 2); /* Ensures the carousel can scroll the full width */
+  animation: slide 36s linear infinite; /* Adjust duration for speed of sliding */
+}
+
+.carousel-inner img {
+  flex: 0 0 auto;
+  width: auto; /* Allow width to adjust based on aspect ratio */
+  height: 100px; /* Set a fixed height for uniformity */
+  object-fit: contain; /* Ensure images fit within the set height while maintaining aspect ratio */
+  margin: 0 20px; /* Increase spacing between images */
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  16.66% { transform: translateX(-16.66%); }
+  33.33% { transform: translateX(-33.33%); }
+  50% { transform: translateX(-50%); }
+  66.66% { transform: translateX(-66.66%); }
+  83.33% { transform: translateX(-83.33%); }
+  100% { transform: translateX(-100%); }
+}
